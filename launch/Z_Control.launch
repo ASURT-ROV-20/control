@@ -1,0 +1,21 @@
+<launch>
+    <node name="zcontrol" pkg="pid" type="controller" output="screen" >
+      <param name="Kp" value="50.0" />
+      <param name="Ki" value="0.0" />
+      <param name="Kd" value="0.0" />
+      <param name="upper_limit" value="130" />
+      <param name="lower_limit" value="-100" />
+      <param name="windup_limit" value="20" />
+      <param name="cutoff_frequency" value="20" />
+      <param name="max_loop_frequency" value="13" />
+      <param name="min_loop_frequency" value="9" />
+     </node>
+
+    <node name="hardware" pkg="Z_Control" type="Hardware.py" output="screen" ></node>
+
+    <node name="setpoint" pkg="Z_Control" type="setpoint.py" output="screen" >
+	
+    </node>
+
+
+</launch>
