@@ -11,6 +11,7 @@ from Z_Control.cfg import pConfig
 set_point_value = 0
  
 def reconfigure(config, level):
+    global a
     global set_point_value
     set_point_value = config["point"]
     a.publish(set_point_value)
@@ -20,8 +21,8 @@ def reconfigure(config, level):
 
 
 rospy.init_node("setpoint")
-srv = Server(pConfig, reconfigure)
 a = rospy.Publisher("setpoint",Float64, queue_size=5)
+srv = Server(pConfig, reconfigure)
 # b = rospy.Publisher("pid_enable", Bool, queue_size=5)
 
 # while not rospy.is_shutdown():
