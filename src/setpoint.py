@@ -26,6 +26,10 @@ srv = Server(pConfig, reconfigure)
 # b = rospy.Publisher("pid_enable", Bool, queue_size=5)
 
 # while not rospy.is_shutdown():
+#     a.publish(set_point_value)
+#     time.sleep(0.1)
+
+# while not rospy.is_shutdown():
     # depth = rospy.get_param("~fp")
     # depth = float(input("Enter Set_Point: "))
     # a.publish(set_point_value)

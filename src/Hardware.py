@@ -23,9 +23,11 @@ time.sleep(1)
 def control_handler(msg):
     #print (msg)
     global offset
-    hat.set_pwm(12,0,int(msg.data)+offset)
-    print ("motor: ", int(msg.data)+offset)
-    hat.set_pwm(13,0,int(msg.data)+offset)
+    pwm = int(msg.data) + offset
+    hat.set_pwm(12, 0, pwm)
+    hat.set_pwm(13, 0, pwm)
+    print ("motor: ", pwm)
+    
 
 
 rospy.init_node("Hardware")
